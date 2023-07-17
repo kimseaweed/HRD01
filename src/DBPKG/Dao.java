@@ -37,17 +37,9 @@ public class Dao
                 dto.setSale(this.rs.getInt(4));
                 list.add(dto);
             }
-        }
-        catch (Exception e) {
+        }catch (Exception e) {
             System.out.println("getMoneyList");
             e.printStackTrace();
-            try {
-                ConnectionDB.closeAll(this.conn, this.pstmt, this.rs);
-            }
-            catch (Exception e2) {
-                e2.printStackTrace();
-            }
-            return list;
         }
         finally {
             try {
@@ -56,13 +48,6 @@ public class Dao
             catch (Exception e2) {
                 e2.printStackTrace();
             }
-        }
-        try {
-            ConnectionDB.closeAll(this.conn, this.pstmt, this.rs);
-        }
-        catch (Exception e2) {
-            e2.printStackTrace();
-        }
         return list;
     }
     
@@ -79,13 +64,6 @@ public class Dao
         catch (Exception e) {
             System.out.println("getDateInsert");
             e.printStackTrace();
-            try {
-                ConnectionDB.closeAll(this.conn, this.pstmt, this.rs);
-            }
-            catch (Exception e2) {
-                e2.printStackTrace();
-            }
-            return 0;
         }
         finally {
             try {
@@ -95,13 +73,7 @@ public class Dao
                 e2.printStackTrace();
             }
         }
-        try {
-            ConnectionDB.closeAll(this.conn, this.pstmt, this.rs);
-        }
-        catch (Exception e2) {
-            e2.printStackTrace();
-        }
-        return 0;
+        return -1;
     }
     
     public List<MemberDTO> getSearchMemberList() {
@@ -126,13 +98,6 @@ public class Dao
         catch (Exception e) {
             System.out.println("getCustnoInsert");
             e.printStackTrace();
-            try {
-                ConnectionDB.closeAll(this.conn, this.pstmt, this.rs);
-            }
-            catch (Exception e2) {
-                e2.printStackTrace();
-            }
-            return list;
         }
         finally {
             try {
@@ -161,12 +126,6 @@ public class Dao
         catch (Exception e) {
             System.out.println("getMemberInsert");
             e.printStackTrace();
-            try {
-                ConnectionDB.closeAll(this.conn, this.pstmt, this.rs);
-            }
-            catch (Exception e2) {
-                e2.printStackTrace();
-            }
         }
         finally {
             try {
